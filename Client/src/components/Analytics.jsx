@@ -77,7 +77,7 @@ const Analytics = ({ allSoftwareData }) => {
   };
 
   return (
-    <div className="row m-3">
+    <div className="row w-[50vw]">
       <div className="col-md-6">
         <div className="card">
           <div className="card-header">

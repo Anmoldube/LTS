@@ -19,7 +19,7 @@ export const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     <>
       <AppBar sx={{ bgcolor: "#333" }}>
         <Toolbar>
-          <div className="flex items-center">
+          <div className="flex items-center p-3">
             <a
               href="https://agrasmartcity.in/"
               target="_blank"

@@ -32,7 +32,7 @@ app.use(
     store: MongoStore.create({
       mongoUrl: process.env.MONGO_URI,
     }),
-    cookie: { maxAge: 24 * 60 * 60 * 1000 }, // 1 day
+    cookie: { maxAge: 1000 * 30 * 60 }, // 1 day
   })
 );
 
@@ -252,7 +252,7 @@ const checkExpiryDates = async () => {
 
       const mailOptions = {
         from: '"Anmol Dube This is a reminder for you pay👻" <dubea9514@gmail.com>', // sender address
-        to: "nmoldube@gmail.com", // list of receivers
+        to: "nmoldube@gmail.com, anmoldubbe15@gmail.com", // list of receivers
         subject: "Software Expiry Notification", // Subject line
         text: `The following software is expiring within 10 days:\n\n${expiringSoon
           .map((data) => `Name: ${data.Name}, Expiry Date: ${data.EXP}`)
@@ -299,7 +299,7 @@ const checkExpiryDates = async () => {
 };
 
 // Schedule the checkExpiryDates function to run every day
-setInterval(checkExpiryDates, 24 * 60 * 60 * 1000); // 24 hours
+setInterval(checkExpiryDates, 24 * 120 * 1000); // 24 hours
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
